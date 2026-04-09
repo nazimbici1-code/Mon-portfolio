@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nazim Bici | Développeur Full-Stack & Spécialiste ISIL</title>
+    <meta name="description"
+        content="Portfolio de Nazim Bici, étudiant en 3ème année Informatique spécialité ISIL. Expert en développement Java, PHP, et solutions logicielles performantes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=5">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Style crucial pour les boutons de liaison vers docs.html */
+        .btn-doc {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-doc:hover {
+            color: var(--gold-light);
+            gap: 15px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Animation de pulsation pour le badge */
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 0 rgba(201, 168, 76, 0.4);
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="home">
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="fade-in">
+                        <span class="hero-badge">
+                            <span class="pulse"></span>
+                            Disponible pour de nouveaux défis technologiques
+                        </span>
+                    </div>
+                    <h1 class="hero-name fade-in fd1">
+                        Nazim<br><span class="text-gradient">Bici</span>
+                    </h1>
+                    <p class="hero-tagline fade-in fd2">
+                        Ingénierie des Systèmes d'Information et du Logiciel (ISIL)
+                    </p>
+                    <p class="hero-subtitle fade-in fd2">
+                        Passionné par l'architecture logicielle et le développement de solutions numériques innovantes. 
+                        Expert en conception d'applications robustes, de la modélisation de bases de données SQL 
+                        jusqu'aux interfaces utilisateurs dynamiques en JavaFX et Web.
+                    </p>
+                    <div class="hero-buttons fade-in fd3">
+                        <a href="#portfolio" class="btn btn-gold">
+                            <i data-lucide="layers"></i>
+                            Voir mes Projets
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i data-lucide="message-circle"></i>
+                            Démarrer un Projet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="gold-line">
+
+        <section class="stats-ribbon">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Applications Développées</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number">L3</span>
+                        <span class="stat-label">Spécialité ISIL (Skikda)</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number">C1</span>
+                        <span class="stat-label">Français (TCF C1)</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Engagement & Rigueur</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3.5rem;">
+                    <span class="section-eyebrow reveal">Mon Expertise</span>
+                    <h2 class="section-title reveal">Services & <span class="text-gradient">Compétences</span></h2>
+                    <p class="section-desc reveal" style="margin: 0 auto; max-width: 700px;">
+                        Une approche complète du cycle de vie logiciel, combinant ingénierie système, 
+                        développement applicatif et design d'interface.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i data-lucide="palette"></i></div>
+                        <h3 class="service-title">Développement Frontend</h3>
+                        <p class="service-desc">Interfaces web modernes, fluides et totalement responsives (HTML5, CSS3, JS).</p>
+                        <ul class="service-list">
+                            <li>Design adaptatif (Mobile-First)</li>
+                            <li>Interfaces UI interactives</li>
+                            <li>Optimisation des performances</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i data-lucide="server"></i></div>
+                        <h3 class="service-title">Architecture Backend</h3>
+                        <p class="service-desc">Conception de serveurs robustes et gestion MySQL sécurisée via PHP.</p>
+                        <ul class="service-list">
+                            <li>APIs REST personnalisées</li>
+                            <li>Sécurisation des flux de données</li>
+                            <li>Modélisation SQL avancée</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i data-lucide="monitor"></i></div>
+                        <h3 class="service-title">Logiciels Desktop Pro</h3>
+                        <p class="service-desc">Solutions Desktop Java & JavaFX intégrant hardware et bases de données.</p>
+                        <ul class="service-list">
+                            <li>Systèmes de caisse (POS)</li>
+                            <li>Pilotage de matériel thermique</li>
+                            <li>Réseau local LAN Sync</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-icon"><i data-lucide="workflow"></i></div>
+                        <h3 class="service-title">Ingénierie & SAD</h3>
+                        <p class="service-desc">Aide à la décision (SAD) et automatisation de processus complexes.</p>
+                        <ul class="service-list">
+                            <li>Analyse multicritère décisionnelle</li>
+                            <li>Business Intelligence & KPI</li>
+                            <li>Sockets TCP/IP & Réseau</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card wide reveal">
+                        <div class="service-icon"><i data-lucide="layers"></i></div>
+                        <h3 class="service-title">Design 3D & WordPress</h3>
+                        <p class="service-desc">Maîtrise d'outils complémentaires comme Blender pour enrichir vos projets digitaux.</p>
+                        <ul class="service-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <li>Modélisation 3D (Blender)</li>
+                            <li>Customisation WordPress</li>
+                            <li>Gestion Git & GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="gold-line">
+
+        <section id="portfolio" class="section-padding">
+            <div class="container">
+                <div style="margin-bottom: 3.5rem;">
+                    <span class="section-eyebrow reveal">Showcase Technique</span>
+                    <h2 class="section-title reveal">Mes <span class="text-gradient">Réalisations</span></h2>
+                    <p class="section-desc reveal">Cliquez sur "VOIR DOCUMENTATION" pour accéder aux détails techniques sur <strong>docs.html</strong>.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card reveal">
+                        <div class="project-cat"><span class="dot"></span>Projet Professionnel</div>
+                        <h3 class="project-title">Logiciel Tommy Burger</h3>
+                        <p class="project-desc">Application tactile JavaFX pour fast-food gérant les commandes et le matériel de caisse.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">JavaFX</span>
+                        </div>
+                        <a href="docs.html#tommy-burger" class="btn-doc">
+                            VOIR DOCUMENTATION <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-cat"><span class="dot"></span>Site Solidaire</div>
+                        <h3 class="project-title">BarakaFood Platform</h3>
+                        <p class="project-desc">Solution web anti-gaspillage alimentaire pour la mise en relation restaurants/nécessiteux.</p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <a href="docs.html#barakafood" class="btn-doc">
+                            VOIR DOCUMENTATION <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-cat"><span class="dot"></span>Ingénierie</div>
+                        <h3 class="project-title">Aide à la Décision (SAD)</h3>
+                        <p class="project-desc">Système expert de Business Intelligence pour l'optimisation des décisions stratégiques.</p>
+                        <div class="project-tags">
+                            <span class="tag">BI</span>
+                            <span class="tag">Analysis</span>
+                        </div>
+                        <a href="docs.html#sad-bi" class="btn-doc">
+                            VOIR DOCUMENTATION <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-cat"><span class="dot"></span>Desktop App</div>
+                        <h3 class="project-title">Gestion Cabinet Médical</h3>
+                        <p class="project-desc">Logiciel de gestion de dossiers patients fonctionnant en réseau local via MS Access.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">LAN Sync</span>
+                        </div>
+                        <a href="docs.html#cabinet-medical" class="btn-doc">
+                            VOIR DOCUMENTATION <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="docs.html" class="btn btn-gold">
+                        <i data-lucide="book-open"></i> ACCÉDER AU PORTFOLIO COMPLET
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-banner">
+            <div class="container">
+                <h2 class="cta-title reveal">Prêt à créer <span class="text-gradient">votre solution ?</span></h2>
+                <p class="cta-desc reveal">
+                    Parlez-moi de votre projet ou consultez mes coordonnées directes.
+                </p>
+                <div class="cta-buttons reveal">
+                    <a href="contact.html" class="btn btn-gold">
+                        <i data-lucide="user"></i>
+                        Voir mes coordonnées
+                    </a>
+                    <a href="mailto:Nazim.bici1@gmail.com" class="btn btn-outline">
+                        <i data-lucide="send"></i>
+                        M'envoyer un Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <div class="bottom-nav-container">
+            <a href="#home" class="bottom-nav-link">
+                <i data-lucide="home"></i>
+                <span>Accueil</span>
+            </a>
+            <a href="#portfolio" class="bottom-nav-link">
+                <i data-lucide="briefcase"></i>
+                <span>Projets</span>
+            </a>
+            <a href="docs.html" class="bottom-nav-link">
+                <i data-lucide="file-text"></i>
+                <span>Portfolio</span>
+            </a>
+            <a href="contact.html" class="bottom-nav-link">
+                <i data-lucide="mail"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <footer class="footer">
+        <div class="container" style="padding: 2rem 0 6rem;">
+            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="copyright">© 2026 Nazim Bici — Tous droits réservés</span>
+                <div class="footer-links" style="display: flex; gap: 1.5rem;">
+                    <a href="https://github.com/nazimbici1-code" target="_blank" class="footer-link" title="GitHub" style="color:inherit;"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/nazim-bici" target="_blank" class="footer-link" title="LinkedIn" style="color:inherit;"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal on scroll
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Navigation active tracking
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.bottom-nav-link');
+
+        function updateNav() {
+            let cur = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 150) cur = s.id; });
+            navLinks.forEach(l => {
+                const href = l.getAttribute('href');
+                l.classList.toggle('active', href === '#' + cur);
+            });
+        }
+
+        window.addEventListener('scroll', updateNav);
+    </script>
+</body>
+
+</html>

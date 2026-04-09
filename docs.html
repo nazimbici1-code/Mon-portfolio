@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Nazim Bici | Documentation Technique Complète</title>
+    <meta name="description" content="Documentation technique approfondie des projets de Nazim Bici, étudiant en Ingénierie des Systèmes d'Information et du Logiciel.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=5">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* ===================== STYLES DE MISE EN PAGE DOCS ===================== */
+        .docs-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .docs-sidebar {
+            width: 300px;
+            background-color: var(--bg-darker);
+            border-right: 1px solid rgba(201, 168, 76, 0.2);
+            padding: 2rem;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .docs-sidebar h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: var(--font-mono);
+        }
+
+        .docs-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .docs-nav li {
+            margin-bottom: 1rem;
+        }
+
+        .docs-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 0.6rem 0;
+            font-size: 0.9rem;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+        }
+
+        .docs-nav a:hover,
+        .docs-nav a.active {
+            color: var(--gold);
+            border-left: 2px solid var(--gold);
+            background: var(--gold-dim);
+        }
+
+        .docs-content {
+            flex: 1;
+            margin-left: 300px;
+            padding: 4rem 6rem;
+            background-color: var(--bg-main);
+            max-width: 1200px;
+        }
+
+        .doc-section {
+            margin-bottom: 8rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .doc-section:last-child {
+            border-bottom: none;
+        }
+
+        .doc-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .doc-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .doc-meta span {
+            background: var(--gold-dim);
+            color: var(--gold);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--gold-border);
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+        }
+
+        .doc-body h4 {
+            color: var(--gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            font-family: var(--font-display);
+        }
+
+        .doc-body p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .tech-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--gold-border);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            margin: 2rem 0;
+        }
+
+        .tech-box h5 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .doc-body ul {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .doc-body li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            list-style: none;
+        }
+
+        .doc-body li::before {
+            content: "→";
+            position: absolute;
+            left: -1.5rem;
+            color: var(--gold);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .back-link:hover { transform: translateX(-5px); }
+
+        @media (max-width: 1024px) {
+            .docs-layout { flex-direction: column; }
+            .docs-sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--gold-border);
+            }
+            .docs-content { margin-left: 0; padding: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <a href="index.html" class="back-link">
+                <i data-lucide="chevron-left"></i> RETOUR PORTFOLIO
+            </a>
+            <h3>PROJETS ISIL</h3>
+            <ul class="docs-nav">
+                <li><a href="#tommy-burger" class="active">Tommy Burger POS</a></li>
+                <li><a href="#barakafood">BarakaFood Web</a></li>
+                <li><a href="#cabinet-medical">Gestion Cabinet Médical</a></li>
+                <li><a href="#sad-bi">Système Aide Décision</a></li>
+                <li><a href="#chat-sockets">Chat Sockets TCP</a></li>
+                <li><a href="#wordpress-haba">WordPress Belgacem Haba</a></li>
+                <li><a href="#formation-isil">Formation & Université</a></li>
+                <li><a href="#stages-sonatrach">Stages Sonatrach</a></li>
+                <li><a href="#competences-fullstack">Stack Technique</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+
+            <section id="tommy-burger" class="doc-section">
+                <h1 class="doc-title text-gradient">Écosystème Tommy Burger — POS & Mobile</h1>
+                <div class="doc-meta">
+                    <span>PROJET PROFESSIONNEL</span>
+                    <span>JAVA / JAVAFX</span>
+                    <span>FLUTTER / DART</span>
+                    <span>MYSQL API</span>
+                    <span>2026</span>
+                </div>
+
+                <div class="doc-body">
+                    <h4>Vision & Problématique Métier</h4>
+                    <p>Dans l'industrie de la restauration rapide, la précision et la rapidité sont les piliers de la rentabilité. <strong>Tommy Burger</strong> présentait un besoin double : une interface de vente ultra-réactive au comptoir et une solution de gestion mobile pour le gérant afin de suivre l'activité en temps réel sans être présent physiquement.</p>
+                    
+                    <div class="tech-box">
+                        <h5>Architecture Multi-Plateforme</h5>
+                        <p>L'écosystème repose sur une base de données <strong>MySQL</strong> centralisée. Le logiciel Desktop communique directement avec la DB, tandis que l'application mobile (développée sous <strong>Flutter</strong>) consomme les données via une API REST sécurisée, permettant une consultation fluide des ventes sur Android et iOS.</p>
+                    </div>
+
+                    <h4>Détails Techniques de l'Implémentation</h4>
+                    <ul>
+                        <li><strong>Interface Desktop (JavaFX) :</strong> Création d'un système de panier dynamique avec gestion des menus et suppléments en temps réel.</li>
+                        <li><strong>Pilotage Hardware :</strong> Utilisation de bibliothèques de bas niveau pour piloter directement les imprimantes thermiques ESC/POS via USB/Série.</li>
+                        <li><strong>Ouverture Tiroir :</strong> Envoi de codes hexadécimaux spécifiques au port de l'imprimante pour déclencher l'ouverture physique du tiroir-caisse.</li>
+                        <li><strong>App Mobile Admin :</strong> Suivi du chiffre d'affaires, gestion des stocks et alertes de rupture en temps réel via Flutter.</li>
+                    </ul>
+
+                    <h4>Panneau d'Administration & Reporting</h4>
+                    <p>Une interface dédiée permet au gérant de modifier les prix, d'ajouter des produits, de gérer les accès du personnel et d'extraire des rapports de ventes quotidiens exportables.</p>
+                </div>
+            </section>
+
+            <section id="barakafood" class="doc-section">
+                <h1 class="doc-title text-gradient">BarakaFood — Plateforme Solidaire</h1>
+                <div class="doc-meta">
+                    <span>WEB APPLICATION</span>
+                    <span>PHP / MYSQL</span>
+                    <span>FULL-STACK</span>
+                    <span>GITHUB</span>
+                </div>
+
+                <div class="doc-body">
+                    <h4>Vision du Projet & Objectif Social</h4>
+                    <p><strong>BarakaFood</strong> est né d'un constat simple : des tonnes de nourriture sont jetées chaque jour par les restaurateurs alors que des besoins alimentaires subsistent. Cette plateforme agit comme un intermédiaire numérique sécurisé pour faciliter le don alimentaire.</p>
+
+                    <h4>Spécifications Techniques Web</h4>
+                    <p>Le projet a été développé en utilisant le stack <strong>LAMP</strong>. Le backend en <strong>PHP</strong> gère toute la logique de mise en relation, tandis que <strong>MySQL</strong> assure le stockage des données sensibles (utilisateurs, annonces de dons, géolocalisation des restaurants).</p>
+
+                    <div class="tech-box">
+                        <h5>Gestion Collaborative & DevOps</h5>
+                        <ul>
+                            <li>Travail d'équipe coordonné entre 4 développeurs.</li>
+                            <li>Utilisation intensive de <strong>Git</strong> et <strong>GitHub</strong> pour la gestion des branches et la résolution des conflits de code.</li>
+                            <li>Vidéo de démonstration produite pour présenter le parcours utilisateur (UX) sur YouTube.</li>
+                        </ul>
+                    </div>
+
+                    <h4>Fonctionnalités Clés</h4>
+                    <ul>
+                        <li>Système d'inscription à double profil : Donateur (Restaurant) et Bénéficiaire (Association/Individu).</li>
+                        <li>Système de recherche par ville et par type de nourriture disponible.</li>
+                        <li>Messagerie interne pour coordonner la récupération des surplus.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="cabinet-medical" class="doc-section">
+                <h1 class="doc-title text-gradient">Gestion de Cabinet Médical</h1>
+                <div class="doc-meta">
+                    <span>DESKTOP APP</span>
+                    <span>JAVA SWING</span>
+                    <span>MS ACCESS</span>
+                    <span>LAN SYNC</span>
+                </div>
+
+                <div class="doc-body">
+                    <h4>Numérisation du Parcours Patient</h4>
+                    <p>Ce logiciel remplace intégralement les dossiers papier par une base de données sécurisée. Il permet de suivre le patient de son arrivée en salle d'attente jusqu'à la prescription finale.</p>
+
+                    <div class="tech-box">
+                        <h5>Défis Techniques : Réseau & Localisation</h5>
+                        <p>L'enjeu majeur était la synchronisation en temps réel sur le réseau local (LAN). La secrétaire doit pouvoir marquer un patient comme "arrivé" et cette information doit apparaître instantanément sur l'écran du médecin dans son bureau via une base <strong>MS Access</strong> partagée.</p>
+                    </div>
+
+                    <h4>Modules Inclus</h4>
+                    <ul>
+                        <li><strong>Module Secrétariat :</strong> Prise de rendez-vous, création de fiches, gestion de la file d'attente.</li>
+                        <li><strong>Module Médecin :</strong> Historique médical complet, gestion des antécédents, saisie des ordonnances.</li>
+                        <li><strong>Sécurité :</strong> Accès protégé par identifiant et mot de passe avec différents niveaux de permissions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="sad-bi" class="doc-section">
+                <h1 class="doc-title text-gradient">Système d'Aide à la Décision (SAD)</h1>
+                <div class="doc-meta">
+                    <span>BI / BUSINESS INTELLIGENCE</span>
+                    <span>ANALYSIS</span>
+                    <span>SAD</span>
+                    <span>DECISIONNEL</span>
+                </div>
+
+                <div class="doc-body">
+                    <h4>Intelligence Artificielle & Décision</h4>
+                    <p>L'objectif de ce projet académique est de transformer les données brutes d'une entreprise en indicateurs stratégiques. Le système analyse plusieurs critères pour recommander la meilleure option possible aux dirigeants.</p>
+
+                    <h4>Algorithmes & Analyse Multicritère</h4>
+                    <p>Mise en œuvre de méthodes de surclassement et d'agrégation de critères. Le système calcule des scores de pertinence pour chaque alternative, permettant de hiérarchiser les solutions à un problème complexe.</p>
+
+                    <div class="tech-box">
+                        <h5>Impact Business Intelligence</h5>
+                        <ul>
+                            <li>Génération automatique de graphiques et indicateurs (KPI).</li>
+                            <li>Application des concepts de Data Warehousing.</li>
+                            <li>Utilisation de GitHub pour le partage du code source et la documentation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chat-sockets" class="doc-section">
+                <h1 class="doc-title text-gradient">Application de Chat (Sockets TCP)</h1>
+                <div class="doc-meta">
+                    <span>NETWORKING</span>
+                    <span>JAVA</span>
+                    <span>TCP/IP</span>
+                    <span>MULTI-THREADING</span>
+                </div>
+
+                <div class="doc-body">
+                    <h4>Architecture Réseau</h4>
+                    <p>Développement d'une messagerie instantanée basée sur l'architecture Client-Serveur. Ce projet démontre la maîtrise des flux de données bidirectionnels sur le réseau TCP/IP.</p>
+
+                    <div class="tech-box">
+                        <h5>Gestion de la Concurrence</h5>
+                        <p>Le serveur est capable de gérer plusieurs dizaines de clients simultanément grâce au <strong>Multi-threading</strong>. Chaque connexion est isolée dans un thread dédié pour éviter tout blocage du service.</p>
+                    </div>
+
+                    <ul>
+                        <li>Utilisation des Sockets Java pour la communication fiable.</li>
+                        <li>Gestion des évènements de connexion, déconnexion et erreurs réseau.</li>
+                        <li>Système de broadcast pour envoyer des messages à tous les utilisateurs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="wordpress-haba" class="doc-section">
+                <h1 class="doc-title text-gradient">WordPress — Blog Belgacem Haba</h1>
+                <div class="doc-meta">
+                    <span>CMS</span>
+                    <span>WORDPRESS</span>
+                    <span>CONTENT DESIGN</span>
+                </div>
+                <div class="doc-body">
+                    <h4>Branding & Structure</h4>
+                    <p>Création et personnalisation complète d'un blog WordPress dédié au scientifique Belgacem Haba. Le travail a été axé sur l'organisation hiérarchique du contenu et une présentation visuelle professionnelle.</p>
+                </div>
+            </section>
+
+            <section id="formation-isil" class="doc-section">
+                <h1 class="doc-title text-gradient">Ingénierie Système & Logiciel (ISIL)</h1>
+                <div class="doc-meta">
+                    <span>L3 INFORMATIQUE</span>
+                    <span>UNIVERSITÉ SKIKDA</span>
+                </div>
+                <div class="doc-body">
+                    <h4>Cursus Académique</h4>
+                    <p>Ma formation à l'Université 20 Août 1955 de Skikda m'a permis d'acquérir une vision globale du cycle de vie d'un logiciel. De l'analyse Merise/UML à la programmation avancée en C et Java, j'ai développé une rigueur d'ingénieur indispensable.</p>
+                </div>
+            </section>
+
+            <section id="stages-sonatrach" class="doc-section">
+                <h1 class="doc-title text-gradient">Expériences Professionnelles — Sonatrach</h1>
+                <div class="doc-meta">
+                    <span>STAGE PRATIQUE</span>
+                    <span>INDUSTRIE</span>
+                </div>
+                <div class="doc-body">
+                    <h4>Immersion en Milieu Industriel</h4>
+                    <p>J'ai effectué deux stages au sein du complexe pétrochimique <strong>Sonatrach-Skikda</strong>. Cette expérience m'a confronté aux exigences de sécurité informatique et à la maintenance de systèmes critiques.</p>
+                </div>
+            </section>
+
+            <section id="competences-fullstack" class="doc-section">
+                <h1 class="doc-title text-gradient">Expertise Technique Complète</h1>
+                <div class="doc-body">
+                    <div class="tech-box">
+                        <ul>
+                            <li><strong>Backend :</strong> Java (J2SE, JavaFX), PHP, C, SQL.</li>
+                            <li><strong>Frontend :</strong> HTML5, CSS3, JavaScript.</li>
+                            <li><strong>Bases de données :</strong> MySQL, MS Access, SQLite.</li>
+                            <li><strong>Outils & Design :</strong> Blender (3D), Git, GitHub, WordPress.</li>
+                            <li><strong>Réseau :</strong> Sockets TCP/IP, Architecture LAN.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.docs-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Contact | Nazim Bici</title>
+    <link rel="stylesheet" href="style.css?v=5">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-layout {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            width: 100%;
+            max-width: 1100px;
+            z-index: 2;
+        }
+
+        /* Styles du Formulaire */
+        .contact-form {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            transition: var(--transition);
+        }
+
+        .contact-form:hover {
+            border-color: var(--gold-border-hover);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--gold);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        /* Liste d'infos à gauche */
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            border-color: var(--gold);
+            transform: translateX(10px);
+            background: var(--bg-card-hover);
+        }
+
+        .info-icon {
+            color: var(--gold);
+            background: var(--gold-dim);
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text p:first-child {
+            font-size: 0.7rem;
+            color: var(--gold);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .info-text p:last-child {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 900px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-layout { padding-top: 60px; }
+            .contact-form { padding: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-layout">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        
+        <a href="index.html" class="btn btn-outline reveal" style="margin-bottom: 3rem; z-index: 2;">
+            <i data-lucide="arrow-left"></i> Retour à l'accueil
+        </a>
+
+        <div class="text-center reveal" style="margin-bottom: 4rem; z-index: 2;">
+            <span class="section-eyebrow">Collaboration</span>
+            <h1 class="section-title text-gradient">Démarrer un Projet</h1>
+            <p class="section-desc">Utilisez le formulaire pour m'envoyer un message direct ou passez par mes réseaux.</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <div class="contact-info-list">
+                <a href="mailto:Nazim.bici1@gmail.com" class="info-item reveal">
+                    <div class="info-icon"><i data-lucide="mail"></i></div>
+                    <div class="info-text">
+                        <p>Email</p>
+                        <p>Nazim.bici1@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/213665440914" target="_blank" class="info-item reveal">
+                    <div class="info-icon"><i data-lucide="message-circle"></i></div>
+                    <div class="info-text">
+                        <p>WhatsApp</p>
+                        <p>+213 665 44 09 14</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/nazim-bici" target="_blank" class="info-item reveal">
+                    <div class="info-icon"><i data-lucide="linkedin"></i></div>
+                    <div class="info-text">
+                        <p>LinkedIn</p>
+                        <p>Nazim Bici</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nazimbici1-code" target="_blank" class="info-item reveal">
+                    <div class="info-icon"><i data-lucide="github"></i></div>
+                    <div class="info-text">
+                        <p>GitHub</p>
+                        <p>nazimbici1-code</p>
+                    </div>
+                </a>
+            </div>
+
+            <form action="https://formspree.io/f/xbdpeqop" method="POST" class="contact-form reveal">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Comment puis-je vous aider ?" required></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="Nouveau message depuis le Portfolio !">
+
+                <button type="submit" class="btn btn-gold" style="width: 100%;">
+                    Envoyer le Message <i data-lucide="send"></i>
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
